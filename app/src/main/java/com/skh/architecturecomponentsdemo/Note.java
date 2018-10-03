@@ -9,13 +9,13 @@ public class Note {
     private int id;
     private String tittle;
     private String description;
-    private String piority;
+    private int priority;
 
 
-    public Note(String tittle, String description, String piority) {
+    public Note(String tittle, String description, int priority) {
         this.tittle = tittle;
         this.description = description;
-        this.piority = piority;
+        this.priority = priority;
     }
 
     public void setId(int id) {
@@ -34,8 +34,8 @@ public class Note {
         return description;
     }
 
-    public String getPiority() {
-        return piority;
+    public int getPriority() {
+        return priority;
     }
 
 
@@ -45,7 +45,7 @@ public class Note {
                 "id=" + id +
                 ", tittle='" + tittle + '\'' +
                 ", description='" + description + '\'' +
-                ", piority='" + piority + '\'' +
+                ", priority='" + priority + '\'' +
                 '}';
     }
 }
