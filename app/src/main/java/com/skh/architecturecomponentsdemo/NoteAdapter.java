@@ -43,6 +43,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     }
 
     class NoteHolder extends RecyclerView.ViewHolder {
+
         @BindView(R.id.tv_tittle)
         TextView tv_tittle;
 
@@ -51,6 +52,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
         @BindView(R.id.tv_priority)
         TextView tv_priority;
+
         @BindView(R.id.tv_id)
         TextView tv_id;
 
@@ -63,9 +65,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
         public void bind(Note note) {
             tv_tittle.setText(note.getTittle());
-            tv_priority.setText(note.getPriority());
+            tv_priority.setText(note.getPriority()+"");
             tv_description.setText(note.getDescription());
-            tv_id.setText(note.getId());
+            tv_id.setText(note.getId()+"");
         }
     }
 }
