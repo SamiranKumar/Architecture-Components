@@ -1,18 +1,18 @@
 package com.skh.architecturecomponentsdemo;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.annotation.NonNull;
 
 import java.util.List;
 
-public class NoteViewmodel extends AndroidViewModel {
+public class NoteViewModel extends AndroidViewModel {
 
     private NoteRepository noteRepository;
     private LiveData<List<Note>> listLiveData;
 
-    public NoteViewmodel(@NonNull Application application) {
+    public NoteViewModel(@NonNull Application application) {
         super(application);
 
         noteRepository = new NoteRepository(application);

@@ -1,14 +1,12 @@
 package com.skh.architecturecomponentsdemo;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
-import android.arch.lifecycle.ViewModelProviders;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
@@ -17,7 +15,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private NoteViewmodel noteViewmodel;
+    private NoteViewModel noteViewmodel;
 
     @BindView(R.id.rv_note_list)
     RecyclerView rv_note_list;
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         rv_note_list.setAdapter(noteAdapter);
 
 
-        noteViewmodel = ViewModelProviders.of(this).get(NoteViewmodel.class);
+        noteViewmodel = ViewModelProviders.of(this).get(NoteViewModel.class);
         noteViewmodel.getListLiveData().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(@Nullable List<Note> notes) {
